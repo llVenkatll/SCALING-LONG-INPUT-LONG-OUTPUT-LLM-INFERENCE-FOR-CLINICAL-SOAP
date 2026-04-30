@@ -1,0 +1,24 @@
+extends: systems_benchmark.yaml
+
+experiment:
+  name: systems_benchmark_decode_sweep
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_decode_sweep
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_decode_sweep
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_decode_sweep
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_decode_sweep
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_decode_sweep
+
+runtime:
+  max_batch_size: 8
+  max_concurrent_requests: 8
+  max_cache_budget_gb: 4.0
+  triton_paged_kv_enabled: true
+
+systems_benchmark:
+  backends:
+    - hf_sequential
+    - mistral_paged_static_batch
+    - mistral_paged_static_batch_triton
+  batch_sizes: [1, 2, 4, 6, 8]
+  warmup_batches: 0
+  repeat_batches: 1

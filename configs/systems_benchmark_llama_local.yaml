@@ -1,0 +1,18 @@
+extends: systems_benchmark.yaml
+
+experiment:
+  name: systems_benchmark_llama_local
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_llama_local
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_llama_local
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_llama_local
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_llama_local
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_llama_local
+
+model:
+  # Practical A10G default for a local Llama baseline.
+  # Change this here if you want a different local Llama checkpoint.
+  llm_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+
+systems_benchmark:
+  backends:
+    - hf_sequential

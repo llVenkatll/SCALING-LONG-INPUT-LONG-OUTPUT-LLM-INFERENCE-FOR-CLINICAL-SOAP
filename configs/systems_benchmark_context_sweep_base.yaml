@@ -1,0 +1,20 @@
+extends: systems_benchmark_decode_sweep_base.yaml
+
+experiment:
+  name: systems_benchmark_context_sweep
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_context_sweep
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_context_sweep
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_context_sweep
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_context_sweep
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_context_sweep
+
+runtime:
+  max_batch_size: 4
+  max_concurrent_requests: 4
+  max_cache_budget_gb: 4.0
+  triton_paged_kv_enabled: true
+
+systems_benchmark:
+  num_prompts: 8
+  batch_sizes: [1]
+  max_new_tokens: 64

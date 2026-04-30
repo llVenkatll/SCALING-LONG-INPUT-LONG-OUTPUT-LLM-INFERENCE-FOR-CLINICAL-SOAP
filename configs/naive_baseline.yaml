@@ -1,0 +1,16 @@
+extends: base.yaml
+
+experiment:
+  name: naive_baseline
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/naive_baseline
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/naive_baseline
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/naive_baseline
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/naive_baseline
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/naive_baseline
+
+dataset:
+  path: /data/project_runtime/datasets/medsynth/test.jsonl
+  max_samples: 100
+
+generation:
+  max_new_tokens: 700

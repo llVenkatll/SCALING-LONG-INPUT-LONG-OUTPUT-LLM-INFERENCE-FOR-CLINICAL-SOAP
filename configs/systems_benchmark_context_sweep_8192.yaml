@@ -1,0 +1,12 @@
+extends: systems_benchmark_context_sweep_base.yaml
+
+experiment:
+  name: systems_benchmark_context_sweep_8192
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_context_sweep_8192
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_context_sweep_8192
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_context_sweep_8192
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_context_sweep_8192
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_context_sweep_8192
+
+dataset:
+  path: /data/project_runtime/datasets/medsynth/context_buckets/bucket_8192.jsonl

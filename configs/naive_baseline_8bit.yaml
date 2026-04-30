@@ -1,0 +1,12 @@
+extends: naive_baseline.yaml
+
+experiment:
+  name: naive_baseline_8bit
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/naive_baseline_8bit
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/naive_baseline_8bit
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/naive_baseline_8bit
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/naive_baseline_8bit
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/naive_baseline_8bit
+
+model:
+  load_in_8bit: true

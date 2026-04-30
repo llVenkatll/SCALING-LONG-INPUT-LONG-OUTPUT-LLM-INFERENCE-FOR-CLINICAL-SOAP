@@ -1,0 +1,14 @@
+extends: naive_baseline.yaml
+
+experiment:
+  name: naive_baseline_benchmark
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/naive_baseline_benchmark
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/naive_baseline_benchmark
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/naive_baseline_benchmark
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/naive_baseline_benchmark
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/naive_baseline_benchmark
+
+benchmark:
+  warmup_runs: 1
+  repeat_runs: 3
+  benchmark_only: true

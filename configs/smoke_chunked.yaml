@@ -1,0 +1,13 @@
+extends: chunked_baseline.yaml
+
+experiment:
+  name: smoke_chunked
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/smoke_chunked
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/smoke_chunked
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/smoke_chunked
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/smoke_chunked
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/smoke_chunked
+
+dataset:
+  path: data/fixtures/smoke_notes_long.jsonl
+  max_samples: 2

@@ -1,0 +1,21 @@
+extends: systems_benchmark_pilot.yaml
+
+experiment:
+  name: systems_benchmark_long_context_pilot
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_long_context_pilot
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_long_context_pilot
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_long_context_pilot
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_long_context_pilot
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_long_context_pilot
+
+dataset:
+  path: /data/project_runtime/datasets/medsynth/long_context_4000.jsonl
+
+runtime:
+  triton_paged_kv_enabled: true
+
+systems_benchmark:
+  backends:
+    - hf_sequential
+    - mistral_paged_static_batch
+    - mistral_paged_static_batch_triton

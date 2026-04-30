@@ -1,0 +1,12 @@
+extends: systems_benchmark_long_context_pilot.yaml
+
+experiment:
+  name: systems_benchmark_long_context_compact_prompt
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_long_context_compact_prompt
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_long_context_compact_prompt
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_long_context_compact_prompt
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_long_context_compact_prompt
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_long_context_compact_prompt
+
+systems_benchmark:
+  prompt_mode: compact_soap

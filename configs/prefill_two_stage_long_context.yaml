@@ -1,0 +1,17 @@
+extends: systems_benchmark_long_context_pilot.yaml
+
+experiment:
+  name: prefill_two_stage_long_context
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/prefill_two_stage_long_context
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/prefill_two_stage_long_context
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/prefill_two_stage_long_context
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/prefill_two_stage_long_context
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/prefill_two_stage_long_context
+
+systems_benchmark:
+  prompt_mode: two_stage_facts
+  backends:
+    - hf_sequential
+  batch_sizes: [1]
+  stage1_max_new_tokens: 256
+  stage2_max_new_tokens: 16

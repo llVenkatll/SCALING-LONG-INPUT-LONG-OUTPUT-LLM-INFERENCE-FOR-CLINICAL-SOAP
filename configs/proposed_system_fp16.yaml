@@ -1,0 +1,12 @@
+extends: proposed_system.yaml
+
+experiment:
+  name: proposed_system_fp16
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/proposed_system_fp16
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/proposed_system_fp16
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/proposed_system_fp16
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/proposed_system_fp16
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/proposed_system_fp16
+
+model:
+  load_in_8bit: false

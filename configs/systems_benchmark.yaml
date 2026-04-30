@@ -1,0 +1,40 @@
+extends: naive_baseline.yaml
+
+experiment:
+  name: systems_benchmark
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark
+
+generation:
+  max_new_tokens: 64
+
+benchmark:
+  enabled: false
+
+runtime:
+  backend: mistral_paged
+  scheduler_mode: static_batch
+  block_size_tokens: 128
+  max_batch_size: 4
+  max_concurrent_requests: 4
+  max_cache_budget_gb: 2.0
+  enable_prefix_cache: false
+  triton_enabled: true
+  triton_paged_kv_enabled: false
+  pad_to_multiple_of: 8
+
+systems_benchmark:
+  enabled: true
+  num_prompts: 4
+  batch_sizes: [1, 2, 4]
+  backends:
+    - hf_sequential
+    - mistral_paged_single
+    - mistral_paged_static_batch
+  warmup_batches: 1
+  repeat_batches: 1
+  max_new_tokens: 64
+  save_figures: true

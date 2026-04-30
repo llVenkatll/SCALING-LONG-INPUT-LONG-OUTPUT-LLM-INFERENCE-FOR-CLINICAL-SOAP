@@ -1,0 +1,27 @@
+extends: base.yaml
+
+experiment:
+  name: proposed_system
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/proposed_system
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/proposed_system
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/proposed_system
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/proposed_system
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/proposed_system
+
+dataset:
+  path: ${CLINICAL_SPEECH_DATASETS_DIR}/primock57/test.jsonl
+  max_samples: 20
+  task: audio_to_note
+
+model:
+  llm_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+  load_in_8bit: true
+
+generation:
+  max_new_tokens: 700
+
+chunking:
+  enabled: true
+  chunk_words: 1000
+  overlap_words: 200
+  summary_prompt: "Summarize the following clinical dialogue chunk for downstream SOAP note generation. Preserve chronology, symptoms, assessment, and plan."

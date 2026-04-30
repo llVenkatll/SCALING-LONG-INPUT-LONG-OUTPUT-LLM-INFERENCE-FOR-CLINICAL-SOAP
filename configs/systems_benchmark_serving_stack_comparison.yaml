@@ -1,0 +1,58 @@
+extends: systems_benchmark_decode_sweep_base.yaml
+
+experiment:
+  name: systems_benchmark_serving_stack_comparison
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_serving_stack_comparison
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_serving_stack_comparison
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_serving_stack_comparison
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_serving_stack_comparison
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_serving_stack_comparison
+
+systems_benchmark:
+  num_prompts: 16
+  max_new_tokens: 64
+  batch_sizes: [1, 2, 4, 8]
+  backends:
+    - hf_sequential
+    - mistral_paged_static_batch
+    - mistral_paged_static_batch_triton
+    - hf_sequential_llama_local
+    - together_hosted_llama
+  backend_specs:
+    hf_sequential:
+      label: HF Sequential (Mistral, local)
+      model_family: Mistral
+      deployment: local
+      serving_stack: hf_sequential
+    mistral_paged_static_batch:
+      label: Paged Static Batch (Mistral, local)
+      model_family: Mistral
+      deployment: local
+      serving_stack: paged_static_batch
+    mistral_paged_static_batch_triton:
+      label: Paged Static Batch + Triton (Mistral, ours)
+      model_family: Mistral
+      deployment: local
+      serving_stack: paged_static_batch_triton
+    hf_sequential_llama_local:
+      provider: local_hf
+      label: HF Sequential (Llama, local)
+      llm_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+      model_family: Llama
+      deployment: local
+      serving_stack: hf_sequential
+    together_hosted_llama:
+      provider: together_hosted
+      label: Together Hosted (Llama)
+      # Verify this against current Together serverless docs before running.
+      # Serverless model availability can change over time.
+      api_model_id: venkat011003_84d6/togethercomputer/meta-llama-3.1-8B-Instruct-AWQ-INT4-69f5dd64
+      llm_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+      tokenizer_model_id: meta-llama/Meta-Llama-3-8B-Instruct
+      model_family: Llama
+      deployment: hosted
+      serving_stack: together_openai_compatible
+      api_key_env: TOGETHER_API_KEY
+      base_url_env: TOGETHER_BASE_URL
+      stream: true
+      stream_include_usage: true

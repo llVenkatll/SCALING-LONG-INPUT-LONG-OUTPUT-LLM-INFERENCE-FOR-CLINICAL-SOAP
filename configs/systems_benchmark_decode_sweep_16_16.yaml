@@ -1,0 +1,13 @@
+extends: systems_benchmark_decode_sweep_base.yaml
+
+experiment:
+  name: systems_benchmark_decode_sweep_16_16
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_decode_sweep_16_16
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_decode_sweep_16_16
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_decode_sweep_16_16
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_decode_sweep_16_16
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_decode_sweep_16_16
+
+systems_benchmark:
+  num_prompts: 16
+  max_new_tokens: 16

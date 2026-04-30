@@ -1,0 +1,74 @@
+experiment:
+  name: base_experiment
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/base_experiment
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/base_experiment
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/base_experiment
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/base_experiment
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/base_experiment
+  seed: 42
+
+dataset:
+  path: ${CLINICAL_SPEECH_DATASETS_DIR}/medsynth/test.jsonl
+  max_samples: 10
+  task: transcript_to_note
+
+model:
+  asr_model_id: openai/whisper-small
+  llm_model_id: mistralai/Mistral-7B-Instruct-v0.3
+  device: cuda
+  dtype: float16
+  load_in_8bit: false
+  attn_implementation: sdpa
+
+generation:
+  max_new_tokens: 512
+  temperature: 0.0
+  top_p: 1.0
+  do_sample: false
+
+chunking:
+  enabled: false
+  chunk_words: 1200
+  overlap_words: 150
+  summary_prompt: "Summarize the following clinical dialogue chunk for downstream SOAP note generation."
+
+output:
+  note_style: soap
+  save_predictions: true
+  save_metrics: true
+  save_raw_intermediates: false
+  cleanup_temp_on_success: true
+  max_checkpoints_to_keep: 2
+  save_frequency: 0
+  keep_best_checkpoint: true
+  keep_latest_checkpoint: true
+  max_log_bytes: 5242880
+  log_backup_count: 3
+  stale_tmp_hours: 24
+
+benchmark:
+  enabled: true
+  warmup_runs: 0
+  repeat_runs: 1
+  synchronize_cuda: true
+  benchmark_only: false
+  save_per_run_metrics: true
+  save_csv: true
+
+storage:
+  runtime_root: ${CLINICAL_SPEECH_RUNTIME_ROOT}
+  datasets_dir: ${CLINICAL_SPEECH_DATASETS_DIR}
+  checkpoints_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}
+  logs_dir: ${CLINICAL_SPEECH_LOGS_DIR}
+  cache_dir: ${CLINICAL_SPEECH_CACHE_DIR}
+  hf_dir: ${CLINICAL_SPEECH_HF_DIR}
+  torch_dir: ${CLINICAL_SPEECH_TORCH_DIR}
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}
+  outputs_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}
+  tmp_dir: ${CLINICAL_SPEECH_TMP_DIR}
+  benchmarks_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}
+
+preflight:
+  enabled: true
+  min_free_data_gb: 20.0
+  min_free_root_gb: 5.0

@@ -1,0 +1,62 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Local editor / OS noise
+.DS_Store
+Thumbs.db
+
+# Dataset and runtime-only material
+data/raw/
+data/processed/*
+!data/processed/.gitkeep
+033026_colab/outputs/
+033026_colab/outputs.zip
+results/
+poster_download_bundle/
+poster_final_bundle/
+final_report_overleaf_bundle/
+final_report_overleaf_bundle.zip
+project_download_bundle_*.tar.gz
+combined_llm_clinical_soap_results.csv
+
+# Generated poster and benchmark assets
+poster_assets/runs/
+poster_assets/test_long_context_assets/
+poster_assets/ablation_sweep/
+poster_assets/deep_systems_study/
+poster_assets/memory_concurrency/
+poster_assets/prefill_optimization/
+poster_assets/prefill_story/
+poster_assets/demo/
+poster_assets/*.png
+poster_assets/*.pdf
+poster_assets/*.csv
+poster_assets/*.json
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+.!*

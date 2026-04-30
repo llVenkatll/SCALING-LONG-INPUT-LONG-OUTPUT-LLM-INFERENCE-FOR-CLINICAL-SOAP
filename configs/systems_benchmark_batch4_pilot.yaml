@@ -1,0 +1,21 @@
+extends: systems_benchmark_pilot.yaml
+
+experiment:
+  name: systems_benchmark_batch4_pilot
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_batch4_pilot
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_batch4_pilot
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_batch4_pilot
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_batch4_pilot
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_batch4_pilot
+
+runtime:
+  triton_paged_kv_enabled: true
+
+systems_benchmark:
+  num_prompts: 4
+  batch_sizes: [1, 2, 4]
+  backends:
+    - hf_sequential
+    - mistral_paged_single
+    - mistral_paged_static_batch
+    - mistral_paged_static_batch_triton

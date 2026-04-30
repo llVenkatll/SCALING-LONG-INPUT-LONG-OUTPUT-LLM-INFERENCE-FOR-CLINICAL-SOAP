@@ -1,0 +1,16 @@
+extends: systems_benchmark.yaml
+
+experiment:
+  name: systems_benchmark_pilot
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/systems_benchmark_pilot
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/systems_benchmark_pilot
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/systems_benchmark_pilot
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/systems_benchmark_pilot
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/systems_benchmark_pilot
+
+systems_benchmark:
+  num_prompts: 2
+  batch_sizes: [1, 2]
+  warmup_batches: 0
+  repeat_batches: 1
+  max_new_tokens: 16

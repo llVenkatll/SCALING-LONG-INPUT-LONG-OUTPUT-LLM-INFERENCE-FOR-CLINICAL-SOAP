@@ -1,0 +1,2 @@
+{"id":"smoke-1","transcript":"Patient has a headache for 3 days.","reference_note":"Subjective: Headache for 3 days. Objective: Stable. Assessment: Likely tension headache. Plan: Rest and hydration.","audio_path":null,"metadata":{"source":"repo_fixture","smoke_test":true}}
+{"id":"smoke-2","transcript":"Patient reports chest pain during exercise.","reference_note":"Subjective: Chest pain on exertion. Objective: Needs evaluation. Assessment: Possible angina. Plan: ECG and cardiology referral.","audio_path":null,"metadata":{"source":"repo_fixture","smoke_test":true}}

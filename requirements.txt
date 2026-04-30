@@ -1,0 +1,16 @@
+PyYAML>=6.0
+tqdm>=4.66.0
+pandas>=2.2.0
+numpy>=1.26.0
+torch>=2.2.0
+transformers>=4.40.0
+accelerate>=0.30.0
+# bitsandbytes is useful on Linux CUDA machines, but is not needed on macOS.
+bitsandbytes>=0.43.0; platform_system == "Linux"
+sentencepiece>=0.2.0
+evaluate>=0.4.0
+bert-score>=0.3.13
+rouge-score>=0.1.2
+jiwer>=3.0.0
+pydantic>=2.6.0
+gradio>=5.29.0

@@ -1,0 +1,13 @@
+extends: naive_baseline.yaml
+
+experiment:
+  name: smoke_naive
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/smoke_naive
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/smoke_naive
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/smoke_naive
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/smoke_naive
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/smoke_naive
+
+dataset:
+  path: data/fixtures/smoke_notes.jsonl
+  max_samples: 2

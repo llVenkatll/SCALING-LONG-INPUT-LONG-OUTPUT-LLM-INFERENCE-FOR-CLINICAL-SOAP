@@ -1,0 +1,22 @@
+extends: base.yaml
+
+experiment:
+  name: chunked_baseline
+  output_dir: ${CLINICAL_SPEECH_OUTPUTS_DIR}/chunked_baseline
+  log_dir: ${CLINICAL_SPEECH_LOGS_DIR}/chunked_baseline
+  benchmark_dir: ${CLINICAL_SPEECH_BENCHMARKS_DIR}/chunked_baseline
+  profiler_dir: ${CLINICAL_SPEECH_PROFILER_DIR}/chunked_baseline
+  checkpoint_dir: ${CLINICAL_SPEECH_CHECKPOINTS_DIR}/chunked_baseline
+
+dataset:
+  path: ${CLINICAL_SPEECH_DATASETS_DIR}/medsynth/test_long.jsonl
+  max_samples: 20
+
+generation:
+  max_new_tokens: 700
+
+chunking:
+  enabled: true
+  chunk_words: 1000
+  overlap_words: 150
+  summary_prompt: "Summarize the following clinical dialogue chunk for downstream SOAP note generation. Preserve medically relevant details."
