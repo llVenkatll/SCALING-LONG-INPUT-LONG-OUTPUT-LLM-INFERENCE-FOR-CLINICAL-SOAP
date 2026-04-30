@@ -1,0 +1,66 @@
+{
+  "reference_only": true,
+  "note": "Trimmed excerpt for structure inspection only. Not a paper-ready benchmark artifact.",
+  "source_config": "configs/systems_benchmark_decode_sweep_16_64.yaml",
+  "num_prompts": 16,
+  "batch_sizes": [1, 2, 4, 6, 8],
+  "enabled_backends": [
+    "hf_sequential",
+    "mistral_paged_static_batch",
+    "mistral_paged_static_batch_triton"
+  ],
+  "triton_paged_kv_runtime_usable": true,
+  "summary_rows": [
+    {
+      "backend": "hf_sequential",
+      "batch_size": 1,
+      "mean_batch_latency_sec": 3.0737827003758866,
+      "mean_throughput_tok_per_sec": 20.900940345723516,
+      "mean_requests_per_sec": 0.32657719290192994,
+      "mean_peak_gpu_mem_gb": 13.829013586044312,
+      "mean_ttft_sec": 0.4347245958133499,
+      "mean_prefill_latency_sec": 0.43356636962653283,
+      "mean_decode_latency_sec": 2.3451610701877144,
+      "mean_latency_sec": 2.7798856660010642,
+      "mean_prompt_tokens": 1369.3125,
+      "mean_completion_tokens": 64.0,
+      "mean_kv_allocated_bytes": null,
+      "mean_kv_utilization_ratio": null,
+      "mean_kv_fragmentation_ratio": null
+    },
+    {
+      "backend": "mistral_paged_static_batch",
+      "batch_size": 4,
+      "mean_batch_latency_sec": 8.282922712599975,
+      "mean_throughput_tok_per_sec": 30.933891146883777,
+      "mean_requests_per_sec": 0.483342049170059,
+      "mean_peak_gpu_mem_gb": 18.192386507987976,
+      "mean_ttft_sec": 1.74691731999701,
+      "mean_prefill_latency_sec": 1.7468922799962456,
+      "mean_decode_latency_sec": 6.524554254254326,
+      "mean_latency_sec": 8.271471574251336,
+      "mean_prompt_tokens": 1369.3125,
+      "mean_completion_tokens": 64.0,
+      "mean_kv_allocated_bytes": 858993459.2,
+      "mean_kv_utilization_ratio": 0.9296173878205128,
+      "mean_kv_fragmentation_ratio": 0.07038261217948716
+    },
+    {
+      "backend": "mistral_paged_static_batch_triton",
+      "batch_size": 4,
+      "mean_batch_latency_sec": 6.374030438801856,
+      "mean_throughput_tok_per_sec": 40.180867616956526,
+      "mean_requests_per_sec": 0.6278260565149457,
+      "mean_peak_gpu_mem_gb": 18.19188678264618,
+      "mean_ttft_sec": 1.7464692260000447,
+      "mean_prefill_latency_sec": 1.7464440682451823,
+      "mean_decode_latency_sec": 4.611448329502309,
+      "mean_latency_sec": 6.357917555502354,
+      "mean_prompt_tokens": 1369.3125,
+      "mean_completion_tokens": 64.0,
+      "mean_kv_allocated_bytes": 858993459.2,
+      "mean_kv_utilization_ratio": 0.9296173878205128,
+      "mean_kv_fragmentation_ratio": 0.07038261217948716
+    }
+  ]
+}

@@ -194,6 +194,15 @@ python3 scripts/evaluate_run.py \
   --output /data/project_runtime/outputs/naive_baseline/metrics.json
 ```
 
+## Reference Files In The Repo
+
+If you want a quick shape check before running anything expensive, inspect:
+
+- `reference_outputs/smoke_naive/`
+- `reference_outputs/systems_benchmark/systems_benchmark_report_excerpt.json`
+
+These are reference-only examples so teammates can compare field names and output layout.
+
 ## Recommended Commit Scope
 
 Commit:

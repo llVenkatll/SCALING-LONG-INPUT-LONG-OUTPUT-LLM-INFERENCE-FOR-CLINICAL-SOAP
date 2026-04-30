@@ -1,0 +1,245 @@
+{
+  "experiment_name": "smoke_naive",
+  "num_samples": 2,
+  "runtime": {
+    "chunking_latency_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "completion_tokens": {
+      "count": 2,
+      "mean": 12.0,
+      "min": 12.0,
+      "max": 12.0,
+      "std": 0.0,
+      "median": 12.0
+    },
+    "decode_latency_sec": {
+      "count": 2,
+      "mean": 0.03,
+      "min": 0.03,
+      "max": 0.03,
+      "std": 0.0,
+      "median": 0.03
+    },
+    "end_to_end_latency_sec": {
+      "count": 2,
+      "mean": 0.00021872900106245652,
+      "min": 0.00021754400222562253,
+      "max": 0.0002199139998992905,
+      "std": 1.675841426446962e-06,
+      "median": 0.00021872900106245652
+    },
+    "final_decode_latency_sec": {
+      "count": 2,
+      "mean": 0.03,
+      "min": 0.03,
+      "max": 0.03,
+      "std": 0.0,
+      "median": 0.03
+    },
+    "final_device_transfer_sec": {
+      "count": 2,
+      "mean": 0.002,
+      "min": 0.002,
+      "max": 0.002,
+      "std": 0.0,
+      "median": 0.002
+    },
+    "final_generation_latency_sec": {
+      "count": 2,
+      "mean": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "std": 0.0,
+      "median": 0.05
+    },
+    "final_prefill_latency_sec": {
+      "count": 2,
+      "mean": 0.01,
+      "min": 0.01,
+      "max": 0.01,
+      "std": 0.0,
+      "median": 0.01
+    },
+    "final_tokenization_sec": {
+      "count": 2,
+      "mean": 0.001,
+      "min": 0.001,
+      "max": 0.001,
+      "std": 0.0,
+      "median": 0.001
+    },
+    "final_total_inference_sec": {
+      "count": 2,
+      "mean": 0.053,
+      "min": 0.053,
+      "max": 0.053,
+      "std": 0.0,
+      "median": 0.053
+    },
+    "generation_latency_sec": {
+      "count": 2,
+      "mean": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "std": 0.0,
+      "median": 0.05
+    },
+    "peak_gpu_mem_gb": {
+      "count": 2,
+      "mean": 1.25,
+      "min": 1.25,
+      "max": 1.25,
+      "std": 0.0,
+      "median": 1.25
+    },
+    "prefill_latency_sec": {
+      "count": 2,
+      "mean": 0.01,
+      "min": 0.01,
+      "max": 0.01,
+      "std": 0.0,
+      "median": 0.01
+    },
+    "preprocessing_latency_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "prompt_tokens": {
+      "count": 2,
+      "mean": 47.5,
+      "min": 47.0,
+      "max": 48.0,
+      "std": 0.7071067811865476,
+      "median": 47.5
+    },
+    "summarization_chunk_count": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_completion_tokens": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_device_transfer_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_generation_latency_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_latency_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_prompt_tokens": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_tokenization_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_total_inference_sec": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "summarization_total_tokens": {
+      "count": 2,
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "std": 0.0,
+      "median": 0.0
+    },
+    "throughput_tok_per_sec": {
+      "count": 2,
+      "mean": 240.0,
+      "min": 240.0,
+      "max": 240.0,
+      "std": 0.0,
+      "median": 240.0
+    },
+    "total_tokens": {
+      "count": 2,
+      "mean": 59.5,
+      "min": 59.0,
+      "max": 60.0,
+      "std": 0.7071067811865476,
+      "median": 59.5
+    },
+    "ttft_sec": {
+      "count": 2,
+      "mean": 0.02,
+      "min": 0.02,
+      "max": 0.02,
+      "std": 0.0,
+      "median": 0.02
+    }
+  },
+  "quality": {
+    "metrics": {},
+    "supported_metrics": [],
+    "unsupported_metrics": [],
+    "warnings": [
+      "Quality metrics skipped because benchmark_only mode is enabled."
+    ]
+  },
+  "benchmark": {
+    "enabled": true,
+    "warmup_runs": 0,
+    "repeat_runs": 1,
+    "synchronize_cuda": true,
+    "benchmark_only": true
+  },
+  "storage": {
+    "output_dir": "/data/project_runtime/test_runner_smoke/outputs/smoke_naive",
+    "log_dir": "/data/project_runtime/test_runner_smoke/logs/smoke_naive",
+    "checkpoint_dir": "/data/project_runtime/test_runner_smoke/checkpoints/smoke_naive",
+    "benchmark_dir": "/data/project_runtime/test_runner_smoke/benchmarks/smoke_naive",
+    "profiler_dir": "/data/project_runtime/test_runner_smoke/profiler/smoke_naive",
+    "tmp_dir": "/data/project_runtime/test_runner_smoke/tmp/smoke_naive-20260428-235031"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "rows": [
+    {
+      "sample_id": "smoke-1",
+      "stage": "final_note",
+      "run_index": 1,
+      "chunk_index": null,
+      "tokenization_sec": 0.001,
+      "device_transfer_sec": 0.002,
+      "prefill_latency_sec": 0.01,
+      "ttft_sec": 0.02,
+      "decode_latency_sec": 0.03,
+      "latency_sec": 0.05,
+      "total_inference_sec": 0.053,
+      "peak_gpu_mem_gb": 1.25,
+      "prompt_tokens": 48,
+      "completion_tokens": 12,
+      "total_tokens": 60,
+      "prompt_token_source": null,
+      "completion_token_source": null
+    },
+    {
+      "sample_id": "smoke-2",
+      "stage": "final_note",
+      "run_index": 1,
+      "chunk_index": null,
+      "tokenization_sec": 0.001,
+      "device_transfer_sec": 0.002,
+      "prefill_latency_sec": 0.01,
+      "ttft_sec": 0.02,
+      "decode_latency_sec": 0.03,
+      "latency_sec": 0.05,
+      "total_inference_sec": 0.053,
+      "peak_gpu_mem_gb": 1.25,
+      "prompt_tokens": 47,
+      "completion_tokens": 12,
+      "total_tokens": 59,
+      "prompt_token_source": null,
+      "completion_token_source": null
+    }
+  ]
+}

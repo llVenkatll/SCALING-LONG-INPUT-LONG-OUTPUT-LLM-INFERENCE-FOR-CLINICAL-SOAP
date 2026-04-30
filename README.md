@@ -86,6 +86,7 @@ PYTHONPATH=src pytest -q
 
 - Repo upload checklist: `GITHUB_UPLOAD_CHECKLIST.md`
 - Public replication path: `REPLICATION.md`
+- Reference output samples: `reference_outputs/`
 - Experiment setup: `README_EXPERIMENTS.md`
 - Safe runtime usage: `RUN_SAFE.md`
 - Benchmark interpretation: `BENCHMARKING.md`
